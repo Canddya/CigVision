@@ -58,14 +58,31 @@ CigVision-github/
 
 ## 快速开始
 
-### 1. 创建并激活环境
+### 1. 获取代码
+
+```bash
+git clone https://github.com/Canddya/CigVision.git
+cd CigVision
+```
+
+或不熟悉命令行时直接下载压缩包：
+
+1. 用浏览器打开 https://github.com/Canddya/CigVision ，点击页面右上方的绿色 “Code” 按钮；
+2. 在下拉菜单中选择 “Download ZIP”，下载得到 `CigVision-main.zip`；
+3. 右键压缩包选择“全部解压”，解压到本地目录，例如 `D:\CigVision`；
+4. 若解压后的目录名为 `CigVision-main`，可重命名为 `CigVision`，便于后续命令书写。
+
+解压或克隆完成后，根目录应包含 `webapp`、`scripts`、`CigYOLO`、`params`、`db`、`models` 六个文件夹，
+以及 `requirements-web.txt`、`start.ps1`、`README.md` 三个文件；其中 `params/best.pt`（约 3 MB）是检测所需的模型权重。
+
+### 2. 创建并激活环境
 
 ```powershell
 conda create -n pytorch python=3.9 -y
 conda activate pytorch
 ```
 
-### 2. 安装 PyTorch
+### 3. 安装 PyTorch
 
 ```powershell
 # 有 NVIDIA 显卡（以 CUDA 12.6 为例）
@@ -75,7 +92,7 @@ conda install pytorch torchvision torchaudio pytorch-cuda=12.6 -c pytorch -c nvi
 # conda install pytorch torchvision torchaudio cpuonly -c pytorch -y
 ```
 
-### 3. 安装网站依赖
+### 4. 安装网站依赖
 
 ```powershell
 cd CigVision-github
@@ -84,7 +101,7 @@ pip install -r requirements-web.txt
 
 > **不要加 `--no-deps`。** 该参数会跳过 FastAPI、Uvicorn 的间接依赖（starlette、pydantic、anyio、click、h11 等），服务将无法启动。
 
-### 4. 放置模型权重
+### 5. 放置模型权重
 
 二分类权重放在 `params/best.pt`，类别必须恰为 `Right` 与 `Wrong`。本仓库已附带该权重。也可用环境变量指定其他路径（优先级最高）：
 
@@ -92,7 +109,7 @@ pip install -r requirements-web.txt
 $env:CIGYOLO_MODEL = 'D:\models\best.pt'
 ```
 
-### 5. 启动服务
+### 6. 启动服务
 
 ```powershell
 # 方式一：一键脚本
