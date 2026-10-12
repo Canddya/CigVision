@@ -100,7 +100,7 @@ async def lifespan(app):
     pool.shutdown(wait=True)
 
 
-app = FastAPI(title='CigYOLO 本地烟盒包装破损检测', lifespan=lifespan)
+app = FastAPI(title='基于YOLO图像分类的卷烟盒外观质量智能检测平台', lifespan=lifespan)
 app.mount('/static', StaticFiles(directory=ROOT / 'webapp/static'), name='static')
 
 
@@ -376,4 +376,4 @@ def export(batch_id: str):
                          '' if item['confidence'] is None else f"{item['confidence']:.6f}", item['elapsed_ms'],
                          item['error'], data['model_name'], data['model_sha256']])
     return Response(buf.getvalue().encode('utf-8-sig'), media_type='text/csv; charset=utf-8',
-                    headers={'Content-Disposition': f'attachment; filename="cigyolo-{batch_id[:8]}.csv"'})
+                    headers={'Content-Disposition': f'attachment; filename="cigvision-{batch_id[:8]}.csv"'})

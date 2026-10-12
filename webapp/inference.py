@@ -1,4 +1,4 @@
-"""CigYOLO classification adapter; no substitute or auto-downloaded weights."""
+"""CigVision classification adapter; no substitute or auto-downloaded weights."""
 import hashlib
 import os
 from pathlib import Path
