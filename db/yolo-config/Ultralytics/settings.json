@@ -1,0 +1,21 @@
+{
+  "settings_version": "0.0.6",
+  "datasets_dir": "D:\\agit\\26.0509-\u70df\u5382\u6210\u54c1\u68c0\u6d4b\\CigYOLO\u53ef\u89c6\u5316\\\u8f6f\u8457\u7533\u8bf7\u6750\u6599\\CigVision-github\\datasets",
+  "weights_dir": "weights",
+  "runs_dir": "runs",
+  "uuid": "06a2c89639bd1566cf4d5e999c79c394332afc538769e442e533cf865392eee5",
+  "sync": true,
+  "api_key": "",
+  "openai_api_key": "",
+  "clearml": true,
+  "comet": true,
+  "dvc": true,
+  "hub": true,
+  "mlflow": true,
+  "neptune": true,
+  "raytune": true,
+  "tensorboard": false,
+  "wandb": false,
+  "vscode_msg": true,
+  "openvino_msg": true
+}
